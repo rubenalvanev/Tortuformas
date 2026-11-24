@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bqrud5qkjttu8"]
+
+[ext_resource type="Texture2D" uid="uid://c3mat5raef0q1" path="res://arts/spites/enemigo_correr.png" id="1_6gdag"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70fun"]
+atlas = ExtResource("1_6gdag")
+region = Rect2(0, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_644a5"]
+atlas = ExtResource("1_6gdag")
+region = Rect2(38, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaurv"]
+atlas = ExtResource("1_6gdag")
+region = Rect2(76, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxox6"]
+atlas = ExtResource("1_6gdag")
+region = Rect2(114, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pex8p"]
+atlas = ExtResource("1_6gdag")
+region = Rect2(152, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ynh0"]
+atlas = ExtResource("1_6gdag")
+region = Rect2(0, 0, 38, 40)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70fun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_644a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaurv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxox6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pex8p")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ynh0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

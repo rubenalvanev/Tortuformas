@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjia7abscah75"]
+
+[ext_resource type="Script" uid="uid://btipeb7w3p7qi" path="res://escenas/del_reves/del_reves.gd" id="1_id662"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2w23"]
+size = Vector2(0, 90)
+
+[node name="DelReves" type="Node2D" node_paths=PackedStringArray("area_2d")]
+script = ExtResource("1_id662")
+area_2d = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_g2w23")

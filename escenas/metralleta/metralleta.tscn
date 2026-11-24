@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://jg6iomp1hqnc"]
+
+[ext_resource type="Texture2D" uid="uid://dex86o400qyx5" path="res://arts/spites/metralleta.png" id="1_ibb0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct8yj"]
+size = Vector2(32, 21)
+
+[node name="Metralleta" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_ct8yj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibb0l")

@@ -1,0 +1,87 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://cvqgi1hf1fatr"]
+
+[ext_resource type="Texture2D" uid="uid://kcq0cyfplykv" path="res://arts/spites/tortuga_correr.png" id="1_40o7f"]
+[ext_resource type="Texture2D" uid="uid://tfgexhe0yme6" path="res://arts/spites/tortuga_morir.png" id="2_8jq1v"]
+[ext_resource type="Texture2D" uid="uid://cpqh4toqfviwp" path="res://arts/spites/tortuga_saltar.png" id="3_8jq1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40o7f"]
+atlas = ExtResource("1_40o7f")
+region = Rect2(0, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jq1v"]
+atlas = ExtResource("1_40o7f")
+region = Rect2(38, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nw58"]
+atlas = ExtResource("1_40o7f")
+region = Rect2(76, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1051c"]
+atlas = ExtResource("1_40o7f")
+region = Rect2(114, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0q8w"]
+atlas = ExtResource("1_40o7f")
+region = Rect2(152, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ew4"]
+atlas = ExtResource("1_40o7f")
+region = Rect2(0, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe23b"]
+atlas = ExtResource("3_8jq1v")
+region = Rect2(0, 0, 38, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7vin"]
+atlas = ExtResource("3_8jq1v")
+region = Rect2(38, 0, 38, 40)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40o7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jq1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nw58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1051c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0q8w")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ew4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8jq1v")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe23b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7vin")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 5.0
+}]

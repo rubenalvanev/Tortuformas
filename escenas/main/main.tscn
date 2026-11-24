@@ -1,0 +1,98 @@
+[gd_scene load_steps=20 format=3 uid="uid://bptl6fn0fw3jm"]
+
+[ext_resource type="Script" uid="uid://ci1x6kyh6effy" path="res://escenas/main/main.gd" id="1_paxdn"]
+[ext_resource type="AudioStream" uid="uid://csyoql15iygaw" path="res://arts/musica/musica.wav" id="2_e0ogj"]
+[ext_resource type="PackedScene" uid="uid://b4hpqmij5i2ga" path="res://escenas/nivel_2/nivel_2.tscn" id="3_6mua3"]
+[ext_resource type="PackedScene" uid="uid://kp684cna1b2g" path="res://escenas/controlador_partida/controlador_partida.tscn" id="3_8ujuo"]
+[ext_resource type="PackedScene" uid="uid://dmq8vsgm7jqcn" path="res://escenas/escena_final/escena_final.tscn" id="3_as58n"]
+[ext_resource type="PackedScene" uid="uid://bwr7olkeka2ki" path="res://escenas/nivel_3/nivel_3.tscn" id="4_6mua3"]
+[ext_resource type="PackedScene" uid="uid://c1b6j21vqbucg" path="res://escenas/contador_muertes/contador_muertes.tscn" id="4_lnepl"]
+[ext_resource type="Script" uid="uid://d3faxypsnndaa" path="res://escenas/main/controlador_pausa.gd" id="4_sj1lj"]
+[ext_resource type="PackedScene" uid="uid://c5lynj7hc1onm" path="res://escenas/nivel_4/nivel_4.tscn" id="5_8pk2w"]
+[ext_resource type="PackedScene" uid="uid://dlv7dfo4yabqy" path="res://escenas/nivel_5/nivel_5.tscn" id="6_j7xcp"]
+[ext_resource type="PackedScene" uid="uid://co7vl35105enx" path="res://escenas/nivel_6/nivel_6.tscn" id="7_vbfmc"]
+[ext_resource type="PackedScene" uid="uid://cvpbhuvsrhplp" path="res://escenas/nivel_7/nivel_7.tscn" id="8_msdlm"]
+[ext_resource type="StyleBox" uid="uid://dspiyaib2pyc6" path="res://estilo_botones/normal.tres" id="11_qkx57"]
+[ext_resource type="StyleBox" uid="uid://xi8qr31hhwgi" path="res://estilo_botones/pressed.tres" id="12_j7xcp"]
+[ext_resource type="StyleBox" uid="uid://krrxb6h81stx" path="res://estilo_botones/hover.tres" id="13_vbfmc"]
+[ext_resource type="StyleBox" uid="uid://cv8nof0alv68n" path="res://estilo_botones/focused.tres" id="14_msdlm"]
+[ext_resource type="Script" uid="uid://bqwmn2gaxq76" path="res://escenas/main/boton_salir_pausa.gd" id="15_k1d2i"]
+[ext_resource type="PackedScene" uid="uid://ddi81apxpiq36" path="res://escenas/nivel_1/nivel_1.tscn" id="18_msdlm"]
+[ext_resource type="PackedScene" uid="uid://bbpws4v0tv86r" path="res://escenas/controles/controles.tscn" id="19_k1d2i"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("controlador_partida", "camara", "controles")]
+position = Vector2(529, 337)
+script = ExtResource("1_paxdn")
+niveles = Array[PackedScene]([ExtResource("18_msdlm"), ExtResource("3_6mua3"), ExtResource("4_6mua3"), ExtResource("5_8pk2w"), ExtResource("6_j7xcp"), ExtResource("7_vbfmc"), ExtResource("8_msdlm"), ExtResource("3_as58n")])
+controlador_partida = NodePath("ControladorPartida")
+camara = NodePath("Camera2D")
+controles = NodePath("Controles")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.15, 2.15)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_e0ogj")
+autoplay = true
+bus = &"Musica"
+
+[node name="ControladorPartida" parent="." instance=ExtResource("3_8ujuo")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ContadorMuertes" parent="CanvasLayer" instance=ExtResource("4_lnepl")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_top = 24.0
+offset_right = 0.0
+offset_bottom = 24.0
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ControladorPausa" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("4_sj1lj")
+
+[node name="ColorRect" type="ColorRect" parent="ControladorPausa"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0.07450981, 0.07450981, 0.43529412)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ControladorPausa"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -24.5
+offset_right = 23.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pausa
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ControladorPausa"]
+visible = false
+offset_left = 544.0
+offset_top = 328.0
+offset_right = 616.0
+offset_bottom = 352.0
+theme_override_styles/normal = ExtResource("11_qkx57")
+theme_override_styles/pressed = ExtResource("12_j7xcp")
+theme_override_styles/hover = ExtResource("13_vbfmc")
+theme_override_styles/focus = ExtResource("14_msdlm")
+text = "Salir"
+script = ExtResource("15_k1d2i")
+
+[node name="Controles" parent="." instance=ExtResource("19_k1d2i")]

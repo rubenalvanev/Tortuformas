@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsucwx283quhh"]
+
+[ext_resource type="Texture2D" uid="uid://bny8ikuvka3w" path="res://arts/spites/mazmorra.png" id="1_1mt0m"]
+[ext_resource type="Script" uid="uid://d0kfgiqhido7j" path="res://escenas/pincho_trampa/pincho_trampa.gd" id="1_7rsfh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rsfh"]
+size = Vector2(16, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmkv0"]
+atlas = ExtResource("1_1mt0m")
+region = Rect2(48, 32, 16, 16)
+
+[node name="PinchoTrampa" type="RigidBody2D" node_paths=PackedStringArray("raycast")]
+collision_layer = 2
+collision_mask = 5
+lock_rotation = true
+freeze = true
+linear_velocity = Vector2(0, -440)
+script = ExtResource("1_7rsfh")
+raycast = NodePath("RayCast2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = -3.1415925
+target_position = Vector2(0, 120)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_7rsfh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = SubResource("AtlasTexture_gmkv0")

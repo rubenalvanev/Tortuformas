@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbpws4v0tv86r"]
+
+[ext_resource type="Texture2D" uid="uid://d1q5r02cwt4o6" path="res://arts/spites/Boton.png" id="1_7hijo"]
+[ext_resource type="Script" uid="uid://c4ciipl41dky0" path="res://escenas/controles/controles.gd" id="1_mffm1"]
+[ext_resource type="Texture2D" uid="uid://cbvibemat30w7" path="res://arts/spites/BotonCrecer.png" id="3_sxamw"]
+[ext_resource type="Texture2D" uid="uid://dndx83kkibec8" path="res://arts/spites/BotonMenguar.png" id="4_v8n76"]
+
+[node name="Controles" type="CanvasLayer" node_paths=PackedStringArray("izquierda", "derecha", "saltar", "crecer", "menguar")]
+script = ExtResource("1_mffm1")
+izquierda = NodePath("Izquierda")
+derecha = NodePath("Derecha")
+saltar = NodePath("Saltar")
+crecer = NodePath("Crecer")
+menguar = NodePath("Menguar")
+
+[node name="Izquierda" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.52156866)
+position = Vector2(32, 488)
+scale = Vector2(6, 6)
+texture_normal = ExtResource("1_7hijo")
+action = "izquierda"
+
+[node name="Derecha" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.52156866)
+position = Vector2(368, 488.00003)
+scale = Vector2(-6, 6)
+texture_normal = ExtResource("1_7hijo")
+action = "derecha"
+
+[node name="Saltar" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.52156866)
+position = Vector2(1080, 480)
+rotation = 1.5707964
+scale = Vector2(6, 6)
+texture_normal = ExtResource("1_7hijo")
+action = "saltar"
+
+[node name="Crecer" type="TouchScreenButton" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+position = Vector2(1032, 376)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_sxamw")
+action = "crecer"
+
+[node name="Menguar" type="TouchScreenButton" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+position = Vector2(832, 536)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_v8n76")
+action = "menguar"
+
+[connection signal="pressed" from="Izquierda" to="." method="_on_izquierda_pressed"]
+[connection signal="released" from="Izquierda" to="." method="_on_izquierda_released"]
+[connection signal="pressed" from="Derecha" to="." method="_on_derecha_pressed"]
+[connection signal="released" from="Derecha" to="." method="_on_derecha_released"]
+[connection signal="pressed" from="Saltar" to="." method="_on_saltar_pressed"]
+[connection signal="released" from="Saltar" to="." method="_on_saltar_released"]
+[connection signal="pressed" from="Crecer" to="." method="_on_saltar_pressed"]
+[connection signal="released" from="Crecer" to="." method="_on_saltar_released"]
+[connection signal="pressed" from="Menguar" to="." method="_on_saltar_pressed"]
+[connection signal="released" from="Menguar" to="." method="_on_saltar_released"]

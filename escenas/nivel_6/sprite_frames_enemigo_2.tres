@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://iwwgmw40ggc6"]
+
+[ext_resource type="Texture2D" uid="uid://d0pu17m3w0n37" path="res://arts/spites/SERPIENTE_CORRER_V2.png" id="1_l16d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2xcs"]
+atlas = ExtResource("1_l16d3")
+region = Rect2(0, 0, 46, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqqa2"]
+atlas = ExtResource("1_l16d3")
+region = Rect2(46, 0, 46, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ptc"]
+atlas = ExtResource("1_l16d3")
+region = Rect2(92, 0, 46, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lu61"]
+atlas = ExtResource("1_l16d3")
+region = Rect2(138, 0, 46, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h785"]
+atlas = ExtResource("1_l16d3")
+region = Rect2(0, 0, 46, 47)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2xcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqqa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ptc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lu61")
+}],
+"loop": true,
+"name": &"correr_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h785")
+}],
+"loop": true,
+"name": &"idle_2",
+"speed": 5.0
+}]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmq8vsgm7jqcn"]
+
+[ext_resource type="Texture2D" uid="uid://by5m5bimlrcpg" path="res://arts/spites/porfa.jpg" id="1_0jc1b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b5myx"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="EscenaFinal" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -37.5
+offset_right = 113.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "                ¡Has Ganado!
+Ahora hazme un Bizum de 5€
+                         😊"
+label_settings = SubResource("LabelSettings_b5myx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.24705882)
+z_index = -1
+position = Vector2(-6.67572e-06, 20)
+scale = Vector2(2.4504507, 1.4827588)
+texture = ExtResource("1_0jc1b")
